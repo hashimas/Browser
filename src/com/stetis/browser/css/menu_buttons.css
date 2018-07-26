@@ -1,0 +1,123 @@
+
+.undecorator-background {
+    -fx-fill:#ffffff;
+    -fx-arc-width:5;
+    -fx-arc-height:5;
+}
+/*
+    The title bar label
+*/
+.undecorator-label-titlebar{
+}
+/*
+*	Menu button
+*/
+.decoration-button-menu{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/menu.png");
+    -fx-background-repeat:no-repeat;
+}
+
+.decoration-button-menu:hover{
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/menu-hover.png");
+    -fx-background-repeat:no-repeat;
+}
+/*
+*	Minimize button
+*/
+.decoration-button-minimize{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/minimize.png");
+    -fx-background-repeat:no-repeat;
+}
+
+.decoration-button-minimize:hover{
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/minimize-hover.png");
+    -fx-background-repeat:no-repeat;
+}
+/*
+*	Maximize button
+*/
+.decoration-button-maximize{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/maximize.png");
+    -fx-background-repeat:no-repeat;
+}
+.decoration-button-maximize:hover{
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/maximize-hover.png");
+    -fx-background-repeat:no-repeat;
+}
+.decoration-button-restore{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/restore.png");
+    -fx-background-repeat:no-repeat;
+}
+.decoration-button-restore:hover{
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/restore-hover.png");
+    -fx-background-repeat:no-repeat;
+}
+/*
+*	Close button
+*/
+.decoration-button-close{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/close.png");
+    -fx-background-repeat:no-repeat;
+}
+.decoration-button-close:hover{
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/close-hover.png");
+    -fx-background-repeat:no-repeat;
+}
+/*
+*	Fullscreen button
+*/
+.decoration-button-fullscreen{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/fullscreen.png");
+    -fx-background-repeat:no-repeat;
+}
+.decoration-button-fullscreen:hover{
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/fullscreen-hover.png");
+    -fx-background-repeat:no-repeat;
+}
+.decoration-button-unfullscreen{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/unfullscreen.png");
+    -fx-background-repeat:no-repeat;
+}
+.decoration-button-unfullscreen:hover{
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/unfullscreen-hover.png");
+    -fx-background-repeat:no-repeat;
+}
+/*
+*	Resize button
+*/
+.decoration-button-resize{
+    -fx-background-radius: 0;
+    -fx-border-style: null;
+    -fx-background-color: null;
+    -fx-background-image:url("../menuimages/resizeSE.png");
+    -fx-background-repeat:no-repeat;
+}
+

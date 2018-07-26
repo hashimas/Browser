@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="482.0" prefWidth="614.0" stylesheets="@browser.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stetis.browser.FXMLDocumentController">
+   <children>
+      <GridPane layoutX="115.0" layoutY="141.0" prefHeight="482.0" prefWidth="614.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="33.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="70.0" minHeight="70.0" prefHeight="70.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="1024.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="120.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/backward-default.png" />
+                                 </image></ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/forward-default.png" />
+                                 </image></ImageView>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="42.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/referesh-default.png" />
+                                 </image></ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="100.0" prefWidth="1366.0">
+                           <children>
+                              <TextField fx:id="address" maxWidth="-Infinity" onAction="#loadPage" prefHeight="30.0" prefWidth="1366.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="30.0">
+                           <children>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/more.png" />
+                                 </image>
+                              </ImageView>
+                           </children></HBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/apps.PNG" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Apps">
+                           <HBox.margin>
+                              <Insets left="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children></HBox>
+                  <Separator prefHeight="0.0" prefWidth="614.0" />
+               </children>
+            </VBox>
+            <HBox alignment="TOP_RIGHT" stylesheets="@css/menu_buttons.css" GridPane.columnIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Hashim">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Button fx:id="minimize" mnemonicParsing="false" onAction="#minimize" pickOnBounds="true" prefHeight="30.0" prefWidth="34.0" style="" styleClass="decoration-button-minimize" text="" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="maximize" mnemonicParsing="false" onAction="#maximized" pickOnBounds="true" prefHeight="30.0" prefWidth="34.0" styleClass="decoration-button-maximize" text="" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="close" mnemonicParsing="false" onAction="#close" pickOnBounds="true" prefHeight="30.0" prefWidth="34.0" styleClass="decoration-button-close" text="" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <rotationAxis>
+                        <Point3D />
+                     </rotationAxis>
+                  </Button>
+               </children>
+            </HBox>
+            <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="location" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </HBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
