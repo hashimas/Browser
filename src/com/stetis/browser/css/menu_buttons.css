@@ -37,8 +37,8 @@
 }
 
 .decoration-button-minimize:hover{
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/minimize-hover.png");
+    -fx-background-color:  rgba(0,0,0,0.4);
+/*    -fx-background-image:url("../menuimages/minimize-hover.png");*/
     -fx-background-repeat:no-repeat;
 }
 /*
@@ -52,22 +52,11 @@
     -fx-background-repeat:no-repeat;
 }
 .decoration-button-maximize:hover{
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/maximize-hover.png");
+    -fx-background-color:  rgba(0,0,0,0.4);
+/*    -fx-background-image:url("../menuimages/maximize-hover.png");*/
     -fx-background-repeat:no-repeat;
 }
-.decoration-button-restore{
-    -fx-background-radius: 0;
-    -fx-border-style: null;
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/restore.png");
-    -fx-background-repeat:no-repeat;
-}
-.decoration-button-restore:hover{
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/restore-hover.png");
-    -fx-background-repeat:no-repeat;
-}
+
 /*
 *	Close button
 */
@@ -79,8 +68,8 @@
     -fx-background-repeat:no-repeat;
 }
 .decoration-button-close:hover{
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/close-hover.png");
+    -fx-background-color: red;
+/*    -fx-background-image:url("../menuimages/close-hover.png");*/
     -fx-background-repeat:no-repeat;
 }
 /*
@@ -121,3 +110,39 @@
     -fx-background-repeat:no-repeat;
 }
 
+.decoration-button-reload{
+    -fx-image: url("../images/reload.png");
+}
+.decoration-button-reload:hover{
+    -fx-image: url("../images/reload-hover.png");
+}
+
+.decoration-button-backward{
+      -fx-image: url("../images/backward.png");
+
+}
+.decoration-button-backward:hover{
+      -fx-image: url("../images/backward-hover.png");
+
+}
+
+.decoration-button-forward{
+    -fx-image: url("../images/forward.png");
+}
+.decoration-button-forward:hover{
+    -fx-image: url("../images/forward-hover.png");
+}
+
+.decoration-button-more{
+    -fx-image: url("../images/more.png");
+}
+.decoration-button-more:hover{
+    -fx-image: url("../images/more-hover.png");
+}
+
+.decoration-tab-close{
+    -fx-image: url("../images/close.png");
+}
+.decoration-tab-close:hover{
+    -fx-image: url("../images/close-hover.png");
+}

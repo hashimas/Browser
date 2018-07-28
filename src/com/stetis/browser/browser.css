@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : HASHIM
 */
 
-.text-input{
+.atext-input{
     -fx-background-radius: 0, 0;
     -fx-background-color: white;
     -fx-border-color: gray;
@@ -19,13 +19,23 @@ and open the template in the editor.
     -fx-highlight-fill: #008287; /* TODO: this probably is the "active" color" */
     -fx-highlight-text-fill: white;
     -fx-border-radius: 3;
+
+
+    -fx-background-image: url("bookmark.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center;
+    /*    
+        -fx-background-images: url("bookmark.png");
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: right center;*/
+
 }
 
-.text-input:hover{
+.atext-input:hover{
     -fx-background-color: #e2e2e2;
 }
 
-.text-input:focused{
+.atext-input:focused{
     -fx-background-color: #5c5c5c, white;
 
     -fx-text-fill: black;
@@ -35,32 +45,32 @@ and open the template in the editor.
 /*-fx-padding: 0.333333em 0.583em 0.333333em 0em; *//* 4 7 4 0 */
 /*}*/
 
-.text-input > .right-button{
+.atext-input > .right-button{
     -fx-cursor: default;
 
     -fx-background-insets: -0.1666665em -0.45em -0.1666665em -0.45em; /* 4 7 4 7 -> this values are subtracted by 2px in em because of the border of the textfield */
 }
 
-.text-field > .right-button > .right-button-graphic {
+.atext-field > .right-button > .right-button-graphic {
     -fx-shape            : "M221.738,305.873l6.135,6.16l-2.875,2.863l-6.135-6.159l-6.263,6.237l-2.864-2.875l6.263-6.238l-6.177-6.202l2.875-2.863l6.177,6.201l6.244-6.22l2.864,2.876L221.738,305.873z";
 
     -fx-padding: 0.5em 0.5em; /* TODO: put the real number here 18 18 */
     -fx-background-color: black;
 }
 
-.text-input > .right-button:hover {
+.atext-input > .right-button:hover {
     -fx-background-color: #dedede;
 }
 
-.text-input > .right-button:pressed {
+.atext-input > .right-button:pressed {
     -fx-background-color: black;
 }
 
-.text-input > .right-button:pressed > .right-button-graphic {
+.atext-input > .right-button:pressed > .right-button-graphic {
     -fx-background-color: white;
 }
 
-.text-input:disabled
+.atext-input:disabled
 {
     -fx-opacity: 1;
     -fx-background-insets: 0, 2;
@@ -71,3 +81,51 @@ and open the template in the editor.
 .item-title.disabled{
     -fx-text-fill: #939393;
 }
+
+
+.home-page{
+    -fx-background-image: url("background.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center; 
+}
+
+.heading-text{
+    -fx-fill: #FFF;
+    -fx-background-color:transparent;
+    -fx-font-size:40;
+}
+.search-filter{
+    -fx-fill: #FFF;
+    -fx-background-color:transparent;
+    -fx-font-size:13;
+    -fx-font-family:"Arial";
+}
+.searh-box{
+     -fx-background-image: url("search-box_1.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center;
+    -fx-border-color: #FFF;
+    -fx-background-insets: 0;
+     -fx-font-size:15;
+         -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.8),10,0,0,0);
+
+}
+
+.privacy-text{
+    -fx-fill: #666666;
+    -fx-background-color:transparent;
+    -fx-font-size:12;
+    -fx-font-family:"Arial";
+}
+.image-view{
+/*    -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.8),10,0,0,0);*/
+    -fx-border-radius: 10;
+}
+
+.username-text{
+    -fx-fill: #FFF;
+    -fx-background-color:transparent;
+    -fx-font-size:12;
+    -fx-font-family:"Arial";
+}
+
