@@ -27,7 +27,7 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FFF;">
                      <children>
-                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="120.0" stylesheets="@css/menu_buttons.css">
+                        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="140.0" stylesheets="@css/menu_buttons.css">
                            <children>
                               <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-backward">
                                  <image>
@@ -41,6 +41,7 @@
                                  <image>
                                     <Image url="@images/reload.png" />
                                  </image></ImageView>
+                              <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="86.0" layoutY="12.0" onDragDetected="#loadPage" pickOnBounds="true" preserveRatio="true" styleClass="decoration-home" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="100.0" prefWidth="1366.0">
@@ -103,7 +104,7 @@
                </children>
             </HBox>
             <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #337FAD;">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #337FAD;">
                <children>
                   <HBox alignment="CENTER_LEFT" style="-fx-background-color: #FFF;" stylesheets="@css/menu_buttons.css">
                      <children>
@@ -118,6 +119,15 @@
                            </HBox.margin>
                         </Text>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-tab-close">
+                           <image>
+                              <Image url="@images/close.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" stylesheets="@css/menu_buttons.css">
+                     <children>
+                        <ImageView fitHeight="38.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-tab">
                            <image>
                               <Image url="@images/close.png" />
                            </image>

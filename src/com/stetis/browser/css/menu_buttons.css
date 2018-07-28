@@ -72,33 +72,7 @@
 /*    -fx-background-image:url("../menuimages/close-hover.png");*/
     -fx-background-repeat:no-repeat;
 }
-/*
-*	Fullscreen button
-*/
-.decoration-button-fullscreen{
-    -fx-background-radius: 0;
-    -fx-border-style: null;
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/fullscreen.png");
-    -fx-background-repeat:no-repeat;
-}
-.decoration-button-fullscreen:hover{
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/fullscreen-hover.png");
-    -fx-background-repeat:no-repeat;
-}
-.decoration-button-unfullscreen{
-    -fx-background-radius: 0;
-    -fx-border-style: null;
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/unfullscreen.png");
-    -fx-background-repeat:no-repeat;
-}
-.decoration-button-unfullscreen:hover{
-    -fx-background-color: null;
-    -fx-background-image:url("../menuimages/unfullscreen-hover.png");
-    -fx-background-repeat:no-repeat;
-}
+
 /*
 *	Resize button
 */
@@ -145,4 +119,18 @@
 }
 .decoration-tab-close:hover{
     -fx-image: url("../images/close-hover.png");
+}
+
+.decoration-home{
+    -fx-image: url("../images/home.png");
+}
+.decoration-home:hover{
+    -fx-image: url("../images/home-hover.png");
+}
+
+.decoration-tab{
+    -fx-image: url("../images/newtab.png");
+}
+.decoration-tab:hover{
+    -fx-image: url("../images/newtab-hover.png");
 }
