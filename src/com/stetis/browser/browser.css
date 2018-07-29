@@ -19,6 +19,8 @@ and open the template in the editor.
     -fx-highlight-fill: #008287; /* TODO: this probably is the "active" color" */
     -fx-highlight-text-fill: white;
     -fx-border-radius: 3;
+  -fx-font-size:14;
+    -fx-font-family:"Arial";
 
 
     -fx-background-image: url("bookmark.png");
@@ -106,7 +108,7 @@ and open the template in the editor.
     -fx-background-position: right center;
     -fx-border-color: #FFF;
     -fx-background-insets: 0;
-     -fx-font-size:15;
+     -fx-font-size:16;
          -fx-effect: dropshadow(three-pass-box,rgba(0,0,0,0.8),10,0,0,0);
 
 }
@@ -128,4 +130,10 @@ and open the template in the editor.
     -fx-font-size:12;
     -fx-font-family:"Arial";
 }
-
+.apps-box{
+    -fx-background-color: #FFF;
+    -fx-background-radius: 2;
+}
+.apps-box:hover{
+    -fx-background-color:  rgba(0,0,0,0.1);
+}

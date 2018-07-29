@@ -29,19 +29,38 @@
                      <children>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="140.0" stylesheets="@css/menu_buttons.css">
                            <children>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-backward">
-                                 <image>
-                                    <Image url="@images/backward.png" />
-                                 </image></ImageView>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-forward">
-                                 <image>
-                                    <Image url="@images/forward.png" />
-                                 </image></ImageView>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="42.0" layoutY="10.0" onDragDetected="#loadPage" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-reload">
-                                 <image>
-                                    <Image url="@images/reload.png" />
-                                 </image></ImageView>
-                              <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="86.0" layoutY="12.0" onDragDetected="#loadPage" pickOnBounds="true" preserveRatio="true" styleClass="decoration-home" />
+                              <HBox alignment="CENTER" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-backward">
+                                       <image>
+                                          <Image url="@images/backward.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-forward">
+                                       <image>
+                                          <Image url="@images/forward.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="42.0" layoutY="10.0" onDragDetected="#loadPage" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-reload">
+                                       <image>
+                                          <Image url="@images/reload.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="86.0" layoutY="12.0" onKeyPressed="#showHomePage" onMouseClicked="#showHomePage" pickOnBounds="true" preserveRatio="true" styleClass="decoration-home" />
+                                 </children>
+                              </HBox>
                            </children>
                         </HBox>
                         <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" prefHeight="100.0" prefWidth="1366.0">
@@ -67,23 +86,33 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #FFF;">
                      <children>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/apps.PNG" />
-                           </image>
+                        <HBox styleClass="apps-box" stylesheets="@browser.css">
+                           <children>
+                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/apps.PNG" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Apps">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
-                        </ImageView>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Apps">
-                           <HBox.margin>
-                              <Insets left="15.0" top="5.0" />
-                           </HBox.margin>
-                        </Text>
+                           <padding>
+                              <Insets bottom="5.0" right="10.0" />
+                           </padding>
+                        </HBox>
                      </children></HBox>
                </children>
             </VBox>
-            <HBox alignment="TOP_RIGHT" style="-fx-background-color: #337FAD;" GridPane.columnIndex="1">
+            <HBox alignment="TOP_RIGHT" style="-fx-background-color: #C68134;" GridPane.columnIndex="1">
                <children>
                   <HBox stylesheets="@css/menu_buttons.css">
                      <children>
@@ -103,8 +132,8 @@
                   </HBox>
                </children>
             </HBox>
-            <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #337FAD;">
+            <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" visible="false" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: #C68134;">
                <children>
                   <HBox alignment="CENTER_LEFT" style="-fx-background-color: #FFF;" stylesheets="@css/menu_buttons.css">
                      <children>
@@ -125,7 +154,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" stylesheets="@css/menu_buttons.css">
+                  <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
                      <children>
                         <ImageView fitHeight="38.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-tab">
                            <image>
@@ -141,7 +170,7 @@
             </HBox>
             <AnchorPane fx:id="homepage" prefHeight="200.0" prefWidth="200.0" styleClass="home-page" stylesheets="@browser.css" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
                <children>
-                  <TextField layoutX="289.0" layoutY="149.0" prefHeight="45.0" prefWidth="622.0" styleClass="searh-box" stylesheets="@browser.css" />
+                  <TextField fx:id="stetis_search_field" layoutX="289.0" layoutY="149.0" onAction="#stetisSearchAction" prefHeight="45.0" prefWidth="622.0" stylesheets="@browser.css" />
                   <Text layoutX="151.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-text" text="STETiS" />
                   <HBox layoutX="90.0" prefHeight="53.0" prefWidth="480.0" spacing="30.0" stylesheets="@browser.css" AnchorPane.topAnchor="20.0">
                      <children>

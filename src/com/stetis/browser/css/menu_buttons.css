@@ -88,7 +88,7 @@
     -fx-image: url("../images/reload.png");
 }
 .decoration-button-reload:hover{
-    -fx-image: url("../images/reload-hover.png");
+/*    -fx-image: url("../images/reload-hover.png");*/
 }
 
 .decoration-button-backward{
@@ -96,7 +96,7 @@
 
 }
 .decoration-button-backward:hover{
-      -fx-image: url("../images/backward-hover.png");
+/*      -fx-image: url("../images/backward-hover.png");*/
 
 }
 
@@ -104,7 +104,7 @@
     -fx-image: url("../images/forward.png");
 }
 .decoration-button-forward:hover{
-    -fx-image: url("../images/forward-hover.png");
+/*    -fx-image: url("../images/forward-hover.png");*/
 }
 
 .decoration-button-more{
@@ -125,12 +125,24 @@
     -fx-image: url("../images/home.png");
 }
 .decoration-home:hover{
-    -fx-image: url("../images/home-hover.png");
+/*    -fx-image: url("../images/home-hover.png");*/
 }
 
 .decoration-tab{
     -fx-image: url("../images/newtab.png");
+    
 }
 .decoration-tab:hover{
-    -fx-image: url("../images/newtab-hover.png");
+/*    -fx-image: url("../images/newtab-hover.png");*/
+}
+
+.action-boxes{
+    -fx-background-color: transparent;
+        -fx-background-radius: 2;
+
+}
+.action-boxes:hover{
+        -fx-background-color:  rgba(0,0,0,0.1);
+
+    
 }

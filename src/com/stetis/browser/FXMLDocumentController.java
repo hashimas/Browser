@@ -36,7 +36,9 @@ import javafx.stage.Stage;
 
 import java.awt.Color;
 import java.awt.SystemColor;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.Effect;
+import javafx.scene.input.MouseEvent;
 
 /**
  *
@@ -74,6 +76,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private HBox trans;
 
+    @FXML
+    private TextField stetis_search_field;
+
     Stage stage = null;
     Rectangle2D rec2;
     Double w, h;
@@ -97,13 +102,23 @@ public class FXMLDocumentController implements Initializable {
 
         parentAnchor.setBackground(Background.EMPTY);
         parentGrid.setBackground(Background.EMPTY);
-       
+
+        stetis_search_field.setOnMouseEntered((MouseEvent event) -> {
+            ColorAdjust colorAdjust = new ColorAdjust();
+            colorAdjust.setBrightness(-0.1);
+            homepage.setEffect(colorAdjust);
+        });
+        stetis_search_field.setOnMouseExited((MouseEvent event) -> {
+            ColorAdjust colorAdjust = new ColorAdjust();
+            homepage.setEffect(null);
+        });
+
     }
 
     void initBrowser() {
 
         webEngine = webView.getEngine();
-        webEngine.load("https://google.com");
+        address.setText("http://www.stetis.com");
 
         //address.textProperty().bind(webEngine.locationProperty());
         // updating progress bar using binding
@@ -111,6 +126,8 @@ public class FXMLDocumentController implements Initializable {
         webEngine.getLoadWorker().stateProperty().addListener((ObservableValue<? extends Worker.State> observable, Worker.State oldValue, Worker.State newValue) -> {
             if (Worker.State.SUCCEEDED.equals(newValue)) {
                 location.setText(webEngine.getTitle());
+                homepage.setVisible(false);
+                webView.setVisible(true);
                 //page_progress.setVisible(true);
             }
             if (newValue == Worker.State.SUCCEEDED) {
@@ -122,25 +139,30 @@ public class FXMLDocumentController implements Initializable {
 
     }
 
-    @FXML
-    void loadPage(ActionEvent event) {
-        String addressText = "http://".concat(address.getText());
+    void load(String add) {
+
+        String addressText = "http://".concat(add);
         // String securedAddressText = "https://".concat(address.getText());
-        String googleSearch = "https://www.google.com.ng/search?q=" + address.getText() + "&oq=ghello&aqs=chrome..69i57j0l5.5840j0j4&sourceid=chrome&ie=UTF-8";
-        if (address.getText().startsWith("http://")) {
-            webEngine.load(address.getText());
+        String googleSearch = "https://www.google.com.ng/search?q=" + add + "&oq=ghello&aqs=chrome..69i57j0l5.5840j0j4&sourceid=chrome&ie=UTF-8";
+        if (add.startsWith("http://")) {
+            webEngine.load(add);
             address.setText(webEngine.getLocation());
 
-        } else if (address.getText().startsWith("https://")) {
-            webEngine.load(address.getText());
+        } else if (add.startsWith("https://")) {
+            webEngine.load(add);
             address.setText(webEngine.getLocation());
-        } else if (address.getText().startsWith("www")) {
+        } else if (add.startsWith("www")) {
             webEngine.load(addressText);
             address.setText(webEngine.getLocation());
         } else {
             webEngine.load(googleSearch);
             address.setText(webEngine.getLocation());
         }
+    }
+
+    @FXML
+    void loadPage(ActionEvent event) {
+        load(address.getText());
 
     }
     //<editor-fold defaultstate="collapsed" desc="Maximize Window Button Action Perform">
@@ -181,6 +203,21 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     void reload(ActionEvent event) {
 
+    }
+
+    @FXML
+    void showHomePage(MouseEvent event) {
+        webView.setVisible(false);
+        homepage.setVisible(true);
+        address.setText("http://www.stetis.com");
+        stetis_search_field.clear();
+
+    }
+
+    @FXML
+    void stetisSearchAction(ActionEvent event) {
+        load(stetis_search_field.getText());
+        //stetis_search_field.setVisible(false);
     }
 //<editor-fold defaultstate="collapsed" desc="Minimise">
 
