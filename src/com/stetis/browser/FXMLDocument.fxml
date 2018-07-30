@@ -31,7 +31,7 @@
                            <children>
                               <HBox alignment="CENTER" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
                                  <children>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-backward">
+                                    <ImageView fx:id="previous" fitHeight="32.0" fitWidth="32.0" onMouseClicked="#backward" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-backward">
                                        <image>
                                           <Image url="@images/backward.png" />
                                        </image>
@@ -40,7 +40,7 @@
                               </HBox>
                               <HBox alignment="CENTER" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
                                  <children>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-forward">
+                                    <ImageView fx:id="next" fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#forward" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-forward">
                                        <image>
                                           <Image url="@images/forward.png" />
                                        </image>
@@ -49,7 +49,7 @@
                               </HBox>
                               <HBox alignment="CENTER" styleClass="action-boxes" stylesheets="@css/menu_buttons.css">
                                  <children>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="42.0" layoutY="10.0" onDragDetected="#loadPage" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-reload">
+                                    <ImageView fx:id="reloadicon" fitHeight="32.0" fitWidth="32.0" layoutX="42.0" layoutY="10.0" onMouseClicked="#reloadPage" pickOnBounds="true" preserveRatio="true" styleClass="decoration-button-reload">
                                        <image>
                                           <Image url="@images/reload.png" />
                                        </image>
@@ -170,8 +170,8 @@
             </HBox>
             <AnchorPane fx:id="homepage" prefHeight="200.0" prefWidth="200.0" styleClass="home-page" stylesheets="@browser.css" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
                <children>
-                  <TextField fx:id="stetis_search_field" layoutX="289.0" layoutY="149.0" onAction="#stetisSearchAction" prefHeight="45.0" prefWidth="622.0" stylesheets="@browser.css" />
-                  <Text layoutX="151.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-text" text="STETiS" />
+                  <TextField fx:id="stetis_search_field" layoutX="261.0" layoutY="149.0" onAction="#stetisSearchAction" prefHeight="45.0" prefWidth="622.0" styleClass="searh-box" stylesheets="@browser.css" />
+                  <Text layoutX="123.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="heading-text" text="STETiS" />
                   <HBox layoutX="90.0" prefHeight="53.0" prefWidth="480.0" spacing="30.0" stylesheets="@browser.css" AnchorPane.topAnchor="20.0">
                      <children>
                         <VBox spacing="10.0">

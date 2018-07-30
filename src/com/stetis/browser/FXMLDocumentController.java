@@ -39,6 +39,8 @@ import java.awt.SystemColor;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.Effect;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.web.WebEvent;
+import javafx.scene.web.WebHistory.Entry;
 
 /**
  *
@@ -75,6 +77,15 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private HBox trans;
+
+    @FXML
+    private ImageView reloadicon;
+
+    @FXML
+    private ImageView next;
+
+    @FXML
+    private ImageView previous;
 
     @FXML
     private TextField stetis_search_field;
@@ -128,22 +139,16 @@ public class FXMLDocumentController implements Initializable {
                 location.setText(webEngine.getTitle());
                 homepage.setVisible(false);
                 webView.setVisible(true);
-                //page_progress.setVisible(true);
-            }
-            if (newValue == Worker.State.SUCCEEDED) {
-                // hide progress bar then page is ready
                 page_progress.setVisible(false);
-            }
-
+            } 
         });
 
     }
 
     void load(String add) {
-
         String addressText = "http://".concat(add);
         // String securedAddressText = "https://".concat(address.getText());
-        String googleSearch = "https://www.google.com.ng/search?q=" + add + "&oq=ghello&aqs=chrome..69i57j0l5.5840j0j4&sourceid=chrome&ie=UTF-8";
+        String googleSearch = "https://www.google.com.ng/search?q=" + add + "&oq=" + add + "&aqs=chrome..69i57j0l5.5840j0j4&sourceid=chrome&ie=UTF-8";
         if (add.startsWith("http://")) {
             webEngine.load(add);
             address.setText(webEngine.getLocation());
@@ -165,43 +170,36 @@ public class FXMLDocumentController implements Initializable {
         load(address.getText());
 
     }
-    //<editor-fold defaultstate="collapsed" desc="Maximize Window Button Action Perform">
+
+//    Since the current visited page is listed in the Entries at the lastPosition (sizeHistory-1),
+//     you will need to access the one index before (sizeHistory-2) in order to get the last visited page
+    @FXML
+    void backward(MouseEvent event) {
+        int sizeHistory = webEngine.getHistory().getEntries().size();
+        if (sizeHistory > 1) {
+            Entry entry = webEngine.getHistory().getEntries().get(sizeHistory - 2);
+            load(entry.getUrl());
+        }
+
+    }
 
     @FXML
-    private void maximized(ActionEvent event) {
-        stage = (Stage) maximize.getScene().getWindow();
-        if (stage.isMaximized()) {
-            if (w == rec2.getWidth() && h == rec2.getHeight()) {
-                stage.setMaximized(false);
-                stage.setHeight(600);
-                stage.setWidth(800);
-                stage.centerOnScreen();
-                maximize.getStyleClass().remove("decoration-button-restore");
-            } else {
-                stage.setMaximized(false);
-                maximize.getStyleClass().remove("decoration-button-restore");
-            }
+    void forward(MouseEvent event) {
 
-        } else {
-            stage.setMaximized(true);
-            stage.setHeight(rec2.getHeight());
-            maximize.getStyleClass().add("decoration-button-restore");
+        int sizeHistory = webEngine.getHistory().getEntries().size();
+        if (sizeHistory > 1) {
+            Entry entry = webEngine.getHistory().getEntries().get(sizeHistory + 2);
+            load(entry.getUrl());
         }
     }
-//</editor-fold>
 
     @FXML
-    void backward(ActionEvent event) {
-
-    }
-
-    @FXML
-    void forward(ActionEvent event) {
-
-    }
-
-    @FXML
-    void reload(ActionEvent event) {
+    void reloadPage(MouseEvent event) {
+        int sizeHistory = webEngine.getHistory().getEntries().size();
+        if (sizeHistory > 1) {
+            Entry entry = webEngine.getHistory().getEntries().get(sizeHistory - 1);
+            load(entry.getUrl());
+        }
 
     }
 
@@ -239,10 +237,28 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 //</editor-fold>
-//<editor-fold defaultstate="collapsed" desc="Resize Window">
+    //<editor-fold defaultstate="collapsed" desc="Maximize Window Button Action Perform">
 
     @FXML
-    private void resize(ActionEvent event) {
+    private void maximized(ActionEvent event) {
+        stage = (Stage) maximize.getScene().getWindow();
+        if (stage.isMaximized()) {
+            if (w == rec2.getWidth() && h == rec2.getHeight()) {
+                stage.setMaximized(false);
+                stage.setHeight(600);
+                stage.setWidth(800);
+                stage.centerOnScreen();
+                maximize.getStyleClass().remove("decoration-button-restore");
+            } else {
+                stage.setMaximized(false);
+                maximize.getStyleClass().remove("decoration-button-restore");
+            }
+
+        } else {
+            stage.setMaximized(true);
+            stage.setHeight(rec2.getHeight());
+            maximize.getStyleClass().add("decoration-button-restore");
+        }
     }
 //</editor-fold>
 
@@ -254,4 +270,12 @@ public class FXMLDocumentController implements Initializable {
     }
 //</editor-fold>
 
+    void resizeWebView() {
+//        Stage s = null;
+//        webEngine.setOnResized((WebEvent<Rectangle2D> event) -> {
+//            Rectangle2D r = event.getData();
+//            s.setWidth(r.getWidth());
+//            s.setHeight(r.getHeight());
+//        });
+    }
 }

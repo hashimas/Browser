@@ -28,7 +28,6 @@ public class Browser extends Application {
         
         stage.setScene(scene);
         stage.initStyle(StageStyle.TRANSPARENT);
-        System.out.println(""+scene.getFill());
         stage.show();
     }
 
