@@ -140,15 +140,20 @@ public class FXMLDocumentController implements Initializable {
                 homepage.setVisible(false);
                 webView.setVisible(true);
                 page_progress.setVisible(false);
-            } 
+            }
         });
 
     }
 
     void load(String add) {
+        //String one = "C:\Users\HASHIM\Desktop\SAMS Proposal\instructions.html";
+        //String two = "file:///C:/Users/HASHIM/Desktop/SAMS%20Proposal/instructions.html";
+
+        String filePath = "file:\\\\".concat(add);
+
         String addressText = "http://".concat(add);
         // String securedAddressText = "https://".concat(address.getText());
-        String googleSearch = "https://www.google.com.ng/search?q=" + add + "&oq=" + add + "&aqs=chrome..69i57j0l5.5840j0j4&sourceid=chrome&ie=UTF-8";
+        String googleSearch = "https://www.google.com.ng/search?q=" + add + "&oq=" + add + "&aqs=stetisweb..69i57j0l5.5840j0j4&sourceid=stetisweb&ie=UTF-8";
         if (add.startsWith("http://")) {
             webEngine.load(add);
             address.setText(webEngine.getLocation());
@@ -159,6 +164,8 @@ public class FXMLDocumentController implements Initializable {
         } else if (add.startsWith("www")) {
             webEngine.load(addressText);
             address.setText(webEngine.getLocation());
+        } else if (add.startsWith("C:") | add.startsWith("D:") | add.startsWith("E:") | add.startsWith("F:") | add.startsWith("G:")) {
+            webEngine.load(filePath);
         } else {
             webEngine.load(googleSearch);
             address.setText(webEngine.getLocation());
