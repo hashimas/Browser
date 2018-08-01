@@ -277,12 +277,4 @@ public class FXMLDocumentController implements Initializable {
     }
 //</editor-fold>
 
-    void resizeWebView() {
-//        Stage s = null;
-//        webEngine.setOnResized((WebEvent<Rectangle2D> event) -> {
-//            Rectangle2D r = event.getData();
-//            s.setWidth(r.getWidth());
-//            s.setHeight(r.getHeight());
-//        });
-    }
 }
